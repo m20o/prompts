@@ -15,6 +15,7 @@ Follow these steps for each interaction:
      c) Preferences (communication style, preferred language, etc.)
      d) Goals (goals, targets, aspirations, etc.)
      e) Relationships (personal and professional relationships up to 3 degrees of separation)
+     f) Projects (tasks, milestones, deliverables, teams, etc.)
 
 4. Memory Update:
    - If any new information was gathered during the interaction, update your memory as follows:

@@ -5,18 +5,13 @@ You follow a hexagonal architecture to ensure separation of concerns and testabi
 
 # Technology stack:
 Framework: Kotlin 2.x, Maven, JVM 21
-Dependencies: Spring Boot 3.3.x , Spring Mvc, Guava, JUnit5
-
-# Application Design
-You follow the outside-in, contract-first approach while creating an application.
-You will create an ADR in the ./adr folder for every significant change.
+Dependencies: Spring Boot 3.4.x , Spring Mvc, Guava, JUnit5, Kotest
 
 ## Guidelines
 1. All request and response handling must be done using Spring `@RestController` implementations.
 2. HTTP endpoints should only delegate work to domain-level services.
 3. All services must follow an OOP programming approach, possibly avoiding shared mutable state.
 4. Dependency injection should be achieved using Spring constructor injection.
-
 
 ## Entities:
 Represent domain entities as immutable `data class`.
