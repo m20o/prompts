@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+import os
+import sys
+import argparse
+from pathlib import Path
+
+def main():
+    parser = argparse.ArgumentParser(description='Build prompts from fragments')
+    parser.add_argument('topics', nargs='+', help='Topics in format category/topic1+topic2')
+    args = parser.parse_args()
+    
+    base_dir = Path(__file__).parent.resolve()
+    all_output = []
+    
+    for topic_spec in args.topics:
+        if '/' not in topic_spec:
+            print(f"Invalid topic format: {topic_spec}", file=sys.stderr)
+            sys.exit(1)
+            
+        category, fragments_str = topic_spec.split('/', 1)
+        fragments = fragments_str.split('+')
+        
+        category_dir = base_dir / category
+        if not category_dir.is_dir():
+            print(f"Category directory not found: {category}", file=sys.stderr)
+            sys.exit(1)
+            
+        available_fragments = [f.stem for f in category_dir.glob('*.md')]
+        
+        for fragment in fragments:
+            fragment_path = category_dir / f"{fragment}.md"
+            if not fragment_path.is_file():
+                print(f"Fragment not found: {fragment} in category {category}", file=sys.stderr)
+                print("Available fragments:", ", ".join(available_fragments), file=sys.stderr)
+                sys.exit(1)
+            
+            with open(fragment_path, 'r') as f:
+                all_output.append(f.read())
+    
+    print("\\n".join(all_output))
+
+if __name__ == "__main__":
+    main()
