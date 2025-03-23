@@ -1,0 +1,1 @@
+Think step by step about whether there exists a less over-engineered and yet simpler, more elegant and more robust solution to the problem that accords with KISS and DRY principles. Present it to me with your degree of confidence from 1 to 10, but NOT modify code yet.
