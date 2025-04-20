@@ -11,7 +11,7 @@ Dependencies: Spring Boot 3.4.x, Spring MVC, Kotlinx Coroutines, Guava, JUnit5, 
 2. Use `CoroutineScope` tied to application lifecycle for top-level coroutines.
 3. Prefer suspending functions over callbacks for asynchronous operations.
 4. Use the appropriate dispatchers based on the workload:
-   - Dispatchers.LOOM (virtual threads) for network/disk operations
+   - Dispatchers.LOOM (virtual threads) for network/disk operations.
    - Dispatchers.Default for CPU-intensive tasks
    - Dispatchers.Main is unnecessary in server-side applications
 5. Avoid using GlobalScope as it can lead to memory leaks and unstructured concurrency.

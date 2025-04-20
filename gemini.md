@@ -1,1 +1,0 @@
-Focus on code in editing files, please limit your code output beforehand in single messages. Keep focused on our guidance, project state and vision found in our docs/ folder and referenced in the initial message of each chat. Refrain from over-engineering, gather feedback, guidance and instructions from the user regularly.
